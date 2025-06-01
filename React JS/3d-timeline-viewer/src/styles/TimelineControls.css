@@ -1,0 +1,134 @@
+.timeline-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-2);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  z-index: 10;
+}
+
+.timeline-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.category-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.category-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.category-button.active {
+  background-color: white;
+  color: var(--color-secondary-900);
+}
+
+.category-button.category-technology.active {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+.category-button.category-science.active {
+  background-color: var(--color-success-500);
+  color: white;
+}
+
+.category-button.category-culture.active {
+  background-color: var(--color-accent-500);
+  color: white;
+}
+
+.category-button.category-politics.active {
+  background-color: var(--color-error-500);
+  color: white;
+}
+
+.timeline-navigation {
+  position: relative;
+  height: 30px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.decade-markers {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--space-2);
+  position: absolute;
+  width: 100%;
+  top: -20px;
+}
+
+.decade-marker {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.event-markers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.event-marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translateY(-50%);
+  top: 50%;
+  margin-left: -5px;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+  padding: 0;
+}
+
+.event-marker:hover {
+  transform: translateY(-50%) scale(1.5);
+}
+
+.event-marker.active {
+  transform: translateY(-50%) scale(1.8);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.event-marker.category-technology {
+  background-color: var(--color-primary-500);
+}
+
+.event-marker.category-science {
+  background-color: var(--color-success-500);
+}
+
+.event-marker.category-culture {
+  background-color: var(--color-accent-500);
+}
+
+.event-marker.category-politics {
+  background-color: var(--color-error-500);
+}
+
+@media (max-width: 768px) {
+  .timeline-controls {
+    padding: var(--space-1);
+  }
+  
+  .decade-markers {
+    display: none;
+  }
+}

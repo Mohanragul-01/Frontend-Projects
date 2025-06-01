@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #111827;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.pixel-grid {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tool-btn {
+  @apply flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200 bg-dark-600 hover:bg-dark-500;
+}
+
+.tool-btn.active {
+  @apply bg-primary-600 text-white;
+}
+
+.layer-card {
+  @apply flex items-center p-2 mb-2 bg-dark-700 rounded-lg border border-dark-600 hover:border-dark-400 transition-all;
+}
+
+.color-swatch {
+  @apply w-6 h-6 rounded-md cursor-pointer transition-transform hover:scale-110 border border-dark-400;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 20px;
+}
